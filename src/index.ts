@@ -27,8 +27,6 @@ export interface Config extends AlphaOptions, TranslateOptions {
 
 export const name = 'tools'
 
-export const schema: Schema<Config> = Schema.object({})
-
 export function apply(ctx: Context, config: Config = {}) {
   ctx.command('tools', '实用工具')
 
