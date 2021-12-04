@@ -2,6 +2,7 @@ import { Context, Schema } from 'koishi'
 import { AlphaOptions } from './alpha'
 import { BaiduOptions } from './baidu'
 import { BrainfuckOptions } from './brainfuck'
+import { GlotOptions } from './glot'
 import { MusicOptions } from './music'
 import { TranslateOptions } from './translate'
 
@@ -16,6 +17,7 @@ export interface Config extends AlphaOptions, TranslateOptions {
   brainfuck?: false | BrainfuckOptions
   bilibili?: false
   crypto?: false
+  glot?: false | GlotOptions
   magi?: false
   maya?: false
   mcping?: false
@@ -35,6 +37,7 @@ export function apply(ctx: Context, config: Config = {}) {
   if (config.brainfuck !== false) ctx.plugin(require('./brainfuck'), config.brainfuck)
   if (config.bilibili !== false) ctx.plugin(require('./bilibili'))
   if (config.crypto !== false) ctx.plugin(require('./crypto'))
+  if (config.glot) ctx.plugin(require('./glot'), config.glot)
   if (config.magi !== false) ctx.plugin(require('./magi'))
   if (config.maya !== false) ctx.plugin(require('./maya'))
   if (config.mcping !== false) ctx.plugin(require('./mcping'))

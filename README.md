@@ -133,3 +133,30 @@ koishi-plugin-tools 是一系列小功能的合集。这些小功能将全部作
   - -f, --from \<lang>  源语言
   - -t, --to \<lang>  目标语言
 
+## 指令: glot
+
+调用 [glot](https://glot.io) 执行代码
+
+默认关闭，你需要在 <https://glot.io> 申请 `token` 并配置本插件以启用此功能。
+
+支持的语言:
+
+assembly, ats, bash, c, clojure, cobol, coffeescript, cpp, crystal, csharp, d, elixir,
+elm, erlang, fsharp, go, groovy, haskell, idris, java, javascript, julia, kotlin, lua,
+mercury, nim, nix, ocaml, perl, php, python, raku, ruby, rust, scala, swift, typescript
+
+- 基本语法: `glot <code>`
+- 选项列表:
+  - -l, --language \<language> 语言
+
+### 配置项: apiToken
+
+- 类型: `string`
+
+在 <https://glot.io> 申请到的 `token` 。
+
+### 配置项: defaultLanguage 
+
+- 类型: `string`
+
+默认值: javascript 。默认执行的语言。
