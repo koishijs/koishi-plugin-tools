@@ -1,27 +1,27 @@
 {
   "name": "koishi-plugin-tools",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.1",
   "description": "Some simple tools for Koishi",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "author": "Shigma <1700011071@pku.edu.cn>",
+  "author": "Shigma <shigma10826@gmail.com>",
   "license": "MIT",
   "files": [
     "lib"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/koishijs/koishi.git"
+    "url": "git+https://github.com/koishijs/koishi-plugin-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/koishijs/koishi/issues"
+    "url": "https://github.com/koishijs/koishi-plugin-tools/issues"
   },
-  "homepage": "https://github.com/koishijs/koishi#readme",
+  "homepage": "https://github.com/koishijs/koishi-plugin-tools",
   "devDependencies": {
     "@types/qrcode": "^1.4.1"
   },
   "peerDependencies": {
-    "koishi": "^4.0.0-beta.2"
+    "koishi": "^4.0.0-beta.4"
   },
   "dependencies": {
     "axios": "^0.21.4",
