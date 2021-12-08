@@ -35,7 +35,7 @@ async function showFull(session: Session, input: string, appid: string) {
 }
 
 async function showShort(session: Session, input: string, appid: string) {
-  return session.app.http.get<string>('http://api.wolframalpha.com/v1/result', { input, appid })
+  return String(await session.app.http.get('http://api.wolframalpha.com/v1/result', { input, appid }))
 }
 
 export const name = 'alpha'
