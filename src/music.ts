@@ -9,7 +9,9 @@ interface Result {
 
 const platforms: Record<Platform, (this: Context, keyword: string) => Promise<Result>> = {
   async netease(keyword) {
-    const data = await this.http.get('http://music.163.com/api/cloudsearch/pc', { s: keyword, type: 1, offset: 0, limit: 5 })
+    const data = await this.http.get('http://music.163.com/api/cloudsearch/pc', {
+      params: { s: keyword, type: 1, offset: 0, limit: 5 },
+    })
     if (data.code !== 200) return
     return {
       type: '163',
@@ -17,7 +19,9 @@ const platforms: Record<Platform, (this: Context, keyword: string) => Promise<Re
     }
   },
   async qq(keyword) {
-    const data = await this.http.get('https://c.y.qq.com/soso/fcgi-bin/client_search_cp', { p: 1, n: 5, w: keyword, format: 'json' })
+    const data = await this.http.get('https://c.y.qq.com/soso/fcgi-bin/client_search_cp', {
+      params: { p: 1, n: 5, w: keyword, format: 'json' },
+    })
     if (data.code) return
     return {
       type: 'qq',

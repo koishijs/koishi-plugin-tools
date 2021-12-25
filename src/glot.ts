@@ -34,15 +34,16 @@ export const name = 'glot'
 
 export function apply(ctx: Context, options: GlotOptions) {
   const pluginOptions = {
-    defalutLanguage: 'javascript',
+    defaultLanguage: 'javascript',
     ...options
   }
   const http = ctx.http.extend({
     endpoint: GLOT_BASE,
     headers: {
       'Authorization': `Token ${options.apiToken}`,
-    }
+    },
   })
+
   ctx.command('glot <code:rawtext>', '运行代码')
     .usage(`由 glot.io 提供的代码运行\n支持的语言: ${LANGUAGES.join(', ')}`)
     .option('language', '-l <language:string>')

@@ -17,7 +17,10 @@ export function apply(ctx: Context) {
         return `不支持该产品，产品选择应为 ${products.join(', ')} 之一。`
       }
       try {
-        const data = await ctx.http.get.arraybuffer(`http://www.7timer.info/bin/${product}.php`, { lon, lat, lang, unit })
+        const data = await ctx.http.get<ArrayBuffer>(`http://www.7timer.info/bin/${product}.php`, {
+          params: { lon, lat, lang, unit },
+          responseType: 'arraybuffer',
+        })
         return segment.image(data)
       } catch (error) {
         ctx.logger('tools').warn(error)

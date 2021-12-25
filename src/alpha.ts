@@ -16,7 +16,9 @@ export interface AlphaOptions {
 }
 
 async function showFull(session: Session, input: string, appid: string) {
-  const data = await session.app.http.get('http://api.wolframalpha.com/v2/query', { input, appid })
+  const data = await session.app.http.get('http://api.wolframalpha.com/v2/query', {
+    params: { input, appid },
+  })
   const { queryresult } = xml2js(data, { compact: true }) as any
   if (queryresult._attributes.success !== 'true') {
     return 'failed'
@@ -35,7 +37,9 @@ async function showFull(session: Session, input: string, appid: string) {
 }
 
 async function showShort(session: Session, input: string, appid: string) {
-  return String(await session.app.http.get('http://api.wolframalpha.com/v1/result', { input, appid }))
+  return String(await session.app.http.get('http://api.wolframalpha.com/v1/result', {
+    params: { input, appid },
+  }))
 }
 
 export const name = 'alpha'
