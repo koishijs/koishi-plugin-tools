@@ -57,7 +57,7 @@ export function apply(ctx: Context) {
           const id = await processor.call(ctx, result)
           if (!id) return
           const output = await getInfo(id)
-          return session.send(output)
+          return output
         } catch {
           return // pass
         }
