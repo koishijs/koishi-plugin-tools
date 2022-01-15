@@ -5,7 +5,7 @@ const BASE_URL = 'https://oeis.org'
 export const name = 'oeis'
 
 export function apply(ctx: Context) {
-  ctx.command('tools/oeis <sequence>', '数列查询', { maxUsage: 10 })
+  ctx.command('tools/oeis <sequence>', '数列查询')
     .option('start', '-s <start>  设置起始页码', { fallback: 0 })
     .usage('输入用逗号隔开的数作为要查询的数列的前几项，或者直接输入以 id:A 打头的数列编号。')
     .example('四季酱，oeis 1,2,3,6,11,23,47,106,235')

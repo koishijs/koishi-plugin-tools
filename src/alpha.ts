@@ -46,7 +46,7 @@ export const name = 'alpha'
 
 export function apply(ctx: Context, config: AlphaOptions) {
   const { wolframAlphaAppId: appid } = config
-  ctx.command('tools/alpha <expr:text>', '调用 WolframAlpha 查询', { maxUsage: 10 })
+  ctx.command('tools/alpha <expr:text>', '调用 WolframAlpha 查询')
     .option('full', '-f 显示完整内容')
     .example('alpha How big is the universe?')
     .example('alpha -f int(sinx)')
