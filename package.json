@@ -18,15 +18,15 @@
   },
   "homepage": "https://github.com/koishijs/koishi-plugin-tools",
   "devDependencies": {
-    "@types/qrcode": "^1.4.1"
+    "@types/qrcode": "^1.4.2"
   },
   "peerDependencies": {
-    "koishi": "^4.0.0"
+    "koishi": "^4.2.0"
   },
   "dependencies": {
-    "axios": "^0.21.4",
+    "axios": "^0.24.0",
     "cheerio": "^1.0.0-rc.10",
-    "qrcode": "^1.4.4",
+    "qrcode": "^1.5.0",
     "xml-js": "^1.6.11"
   }
 }
